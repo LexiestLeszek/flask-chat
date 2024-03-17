@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" class="buttons">
+    <h3>Войдите в комнату</h3>
+    <div>
+        <label for="">Имя:</label>
+        <input type="text" placeholder="Напиши имя" name="name" value="{{name}}" id="">
+    </div>
+    <div class="join">
+        <input type="text" placeholder="Номер комнаты" name="code" value="{{code}}" id="">
+        <button type="submit" name="join">Войти в комнату</button>
+    </div>
+    <button type="submit" name="create" class="create-btn">Создать комнату</button>
+    {% if error %}
+    <ul>
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
+</form>
+{% endblock content %}
